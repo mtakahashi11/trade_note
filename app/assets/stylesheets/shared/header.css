@@ -1,0 +1,52 @@
+.top-page-header {
+  width: 100vw;
+  padding: 5vh 0;
+  background-color: #00000065;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.trade-icon {
+  width: 20vw;
+  color: #1d1d1de0;
+  font-size: 50px;}
+
+.nav {
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  margin: 0 20px 0 0;
+}
+
+.user-name {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
