@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+
+<div class="post-show">
+  <div class="post-box">
+    <% if user_signed_in? %>
+      <% if current_user.id == @post.user_id %>
+        <%# <%= link_to '商品の編集', edit_post_path(@post.id), method: :get, class: "post-red-btn" %> %>
+        <p class='or-text'>or</p>
+        <%# <%= link_to '削除', post_path(@post.id), method: :delete, class:'post-destroy' %> %>
+      <% end %>
+    <% end %>
+
+    <div class='post-img-content'>
+      <%= image_tag @post.image, class:"item-box-img" %>
+    </div>
+    
+    <div class="post-explain-box">
+      <span><%= @post.description %></span>
+    </div>
+  </div>
+
+  <div class="comment-box">
+    <form>
+      <p class="comment-warn">
+        <b>コメントする</b>
+      </p>
+      <textarea class="comment-text"></textarea>
+      <button type="submit" class="comment-btn">
+        <b><span>登録<span></b>
+      </button>
+    </form>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
