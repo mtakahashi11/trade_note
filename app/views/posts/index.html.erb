@@ -6,7 +6,7 @@
     <ul class='post-lists'>
       <% @posts.each do |post| %>
         <li class='list'>
-          <%= link_to root_path(post.id), method: :get do %>
+          <%= link_to post_path(post.id), method: :get do %>
             <div class='post-img-content'>
               <%= image_tag post.image, class: "post-img" %>
             </div>
