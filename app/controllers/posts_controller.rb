@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index ,:show]
-  before_action :set_post, only: [:show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_post, only: [:show, :edit, :update]
+
   
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -20,6 +21,18 @@ class PostsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+    redirect_to root_path if current_user.id != @post.user_id
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
