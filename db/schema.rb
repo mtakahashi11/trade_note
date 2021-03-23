@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_210933) do
+ActiveRecord::Schema.define(version: 2021_03_18_224045) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,24 @@ ActiveRecord::Schema.define(version: 2021_02_27_210933) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "trades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "date", null: false
+    t.integer "time", null: false
+    t.integer "currency_id", null: false
+    t.integer "type_id", null: false
+    t.integer "entry", null: false
+    t.integer "exit", null: false
+    t.integer "holding_time_id", null: false
+    t.integer "pip", null: false
+    t.integer "fee", null: false
+    t.integer "profit_loss", null: false
+    t.integer "win_lose_id", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_trades_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -56,4 +74,5 @@ ActiveRecord::Schema.define(version: 2021_02_27_210933) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "posts", "users"
+  add_foreign_key "trades", "users"
 end
