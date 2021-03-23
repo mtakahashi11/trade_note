@@ -1,0 +1,39 @@
+<%= render "shared/header" %>
+
+<div class="user__wrapper">
+  <h2 class="page-name">
+    <%= "#{@user.name}さんのトレード成績"%>
+  </h2>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th class="table__col1">日付</th>
+        <th class="table__col1">時間</th>
+        <th class="table__col1">通貨</th>
+        <th class="table__col1">売買</th>
+        <th class="table__col1">エントリー</th>
+        <th class="table__col1">エグジット</th>
+        <th class="table__col1">保有時間</th>
+        <th class="table__col1">pip損益</th>
+        <th class="table__col1">手数料</th>
+        <th class="table__col1">累計損益</th>
+        <th class="table__col1">勝敗</th>
+      </tr>
+      <tr>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+        <td class="table__col2"><%= @user.name %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<%= render "shared/footer" %>
