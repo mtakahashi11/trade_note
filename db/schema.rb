@@ -42,16 +42,16 @@ ActiveRecord::Schema.define(version: 2021_03_18_224045) do
   end
 
   create_table "trades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "date", null: false
-    t.integer "time", null: false
+    t.text "date", null: false
+    t.text "time", null: false
     t.integer "currency_id", null: false
     t.integer "type_id", null: false
-    t.integer "entry", null: false
-    t.integer "exit", null: false
+    t.text "entry", null: false
+    t.text "exit", null: false
     t.integer "holding_time_id", null: false
-    t.integer "pip", null: false
-    t.integer "fee", null: false
-    t.integer "profit_loss", null: false
+    t.text "pip", null: false
+    t.text "fee", null: false
+    t.text "profit_loss", null: false
     t.integer "win_lose_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
