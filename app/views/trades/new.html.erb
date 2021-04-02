@@ -1,0 +1,71 @@
+<div class="posts-sell-contents">
+  <header class="posts-sell-header">
+    <h1><%= link_to "𝐓𝐫𝐚𝐝𝐞 𝐍𝐨𝐭𝐞",root_path, class: "second-logo" %></h1>
+  </header>
+
+  <div class="posts-sell-main">
+    <h2 class="posts-sell-title">トレード記録を入力</h2>
+    <%= form_with model: @trade, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="posts-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          日付
+        </div>
+        <%= f.text_area :date, class:"trades-text", id:"post-date", placeholder:"例  3/24" %>
+        <div class="weight-bold-text">
+          時間
+        </div>
+        <%= f.text_area :time, class:"trades-text", id:"post-time", placeholder:"例  12時34分" %>
+        <div class="weight-bold-text">
+          通貨
+        </div>
+        <%= f.collection_select(:currency_id, Currency.all, :id, :name, {}, {class:"select-box", id:"trade-currency"}) %>
+        <div class="weight-bold-text">
+          売買
+        </div>
+        <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"trade-type"}) %>
+        <div class="weight-bold-text">
+          エントリー
+        </div>
+        <%= f.text_area :entry, class:"trades-text", id:"post-name", placeholder:"例  87.02" %>
+        <div class="weight-bold-text">
+          エグジット
+        </div>
+        <%= f.text_area :exit, class:"trades-text", id:"post-name", placeholder:"例  87.00" %>
+        <div class="weight-bold-text">
+          保有時間
+        </div>
+        <%= f.collection_select(:holding_time_id, HoldingTime.all, :id, :name, {}, {class:"select-box", id:"trade-holding-time"}) %>
+        <div class="weight-bold-text">
+          pip損益
+        </div>
+        <%= f.text_area :pip, class:"trades-text", id:"post-name", placeholder:"例  20" %>
+        <div class="weight-bold-text">
+          手数料損益
+        </div>
+        <%= f.text_area :fee, class:"trades-text", id:"post-name", placeholder:"例  0" %>
+        <div class="weight-bold-text">
+          累計損益
+        </div>
+        <%= f.text_area :profit_loss, class:"trades-text", id:"post-name", placeholder:"例  1,234" %>
+        <div class="weight-bold-text">
+          勝敗
+        </div>
+        <%= f.collection_select(:win_lose_id, WinLose.all, :id, :name, {}, {class:"select-box", id:"trade-win-lose"}) %>
+      </div>
+    </div>
+
+    <div class="trade-btn-contents">
+      <%= f.submit "記録する" ,class:"trade-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+
+  <footer class="posts-sell-footer">
+    <h1><%= link_to "𝐓𝐫𝐚𝐝𝐞 𝐍𝐨𝐭𝐞",root_path,class: "second-fotter-logo" %></h1>
+  </footer>
+</div>

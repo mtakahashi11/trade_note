@@ -19,21 +19,12 @@
         <th class="table__col1">累計損益</th>
         <th class="table__col1">勝敗</th>
       </tr>
-      <tr>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-        <td class="table__col2"><%= @user.name %></td>
-      </tr>
+        <%= render partial: "trades/trade", collection: @user.trades %>
     </tbody>
   </table>
 </div>
-
+<%= link_to(new_trade_path, class: 'Record-btn') do %>
+  <span class='trade-btn-text'>記録する</span>
+  <%= image_tag 'icon_trade.png' , size: '185x50' ,class: "trade-btn-icon" %>
+<% end %>
 <%= render "shared/footer" %>
