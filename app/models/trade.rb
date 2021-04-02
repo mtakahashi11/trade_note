@@ -3,7 +3,7 @@ class Trade < ApplicationRecord
     validates :date
     validates :time
     validates :currency_id, numericality: { other_than: 1 }
-    validates :type_id
+    validates :type_id, numericality: { other_than: 1 }
     validates :entry
     validates :exit
     validates :holding_time_id, numericality: { other_than: 1 }
@@ -17,6 +17,7 @@ class Trade < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :currency
+  belongs_to :type
   belongs_to :holding_time
   belongs_to :win_lose
 end
