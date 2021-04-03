@@ -10,4 +10,8 @@
   <td class="table__col2"><%= trade.fee %></td>
   <td class="table__col2"><%= trade.profit_loss %></td>
   <td class="table__col2"><%= trade.win_lose.name %></td>
+  <td class="edit-destroy">
+    <%= link_to '編集', "#", method: :get, class: "trade-edit" %>
+    <%= link_to '削除', user_path(@user.id), method: :delete, class:'trade-destroy' %>
+  </td>
 </tr>
